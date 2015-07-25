@@ -1,11 +1,11 @@
 @extends('admin.principal')
 
 @section('title')
-	Login
+	Usuarios
 @endsection
 
 @section('content')
 	
-	<p>Login Section</p>
+	<p>Listado de usuarios</p>
 
 @endsection

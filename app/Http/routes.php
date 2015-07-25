@@ -15,6 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin',function(){
-	return view('admin.login');
+Route::get('admin',['middleware' => 'auth', function() {
+	return view('admin.index');
+}]);
+
+Route::get('login',function(){
+	return view('auth.login');
 });
+
+Route::get('users',['middleware' => 'auth', function() {
+	return view('admin.users');
+}]);
+
+Route::get('profile', ['middleware' => 'auth', function() {
+    // Only authenticated users may enter...
+}]);
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
