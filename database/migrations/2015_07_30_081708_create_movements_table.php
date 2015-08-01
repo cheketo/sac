@@ -25,7 +25,7 @@ class CreateMovementsTable extends Migration
                     ->onUpdate('CASCADE')
                     ->onDelete('NO ACTION');
 
-            $table->foreign('type_id')->references('id')->on('movments_type')
+            $table->foreign('type_id')->references('id')->on('movements_type')
                     ->onUpdate('CASCADE')
                     ->onDelete('NO ACTION');
         });

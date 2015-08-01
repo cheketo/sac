@@ -12,24 +12,40 @@ class CreatePatientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('patients', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('first_name',255);
-            $table->string('last_name',255);
-            $table->string('email');
-            $table->string('phone');
-            $table->integer('status_id')->unsigned();
-            $table->timestamps();
+        if(Schema::hasTable('patients')){
+            if(Schema::hasTable('users')){
+                Schema::table('patients', function (Blueprint $table) {
 
-            $table->foreign('status_id')->references('id')->on('status')
-                    ->onUpdate('CASCADE')
-                    ->onDelete('NO ACTION');
+                    $table->increments('id')->change();
+                    $table->integer('user_id')->unsigned()->change();
+                    $table->string('first_name',255)->change();
+                    $table->string('last_name',255)->change();
+                    $table->string('email')->change();
+                    $table->string('phone',100)->change();
+                    $table->integer('status_id')->unsigned()->change();
+                    $table->timestamps()->change();
 
-            $table->foreign('user_id')->references('id')->on('users')
-                    ->onUpdate('CASCADE')
-                    ->onDelete('NO ACTION');
-        });
+                    $table->foreign('user_id')->references('id')->on('users')
+                            ->onUpdate('CASCADE')
+                            ->onDelete('NO ACTION');
+
+                    $table->foreign('status_id')->references('id')->on('status')
+                            ->onUpdate('CASCADE')
+                            ->onDelete('NO ACTION');
+                });
+            }
+        }else{
+            Schema::create('patients', function (Blueprint $table) {
+                $table->increments('id');
+                $table->integer('user_id')->unsigned();
+                $table->string('first_name',255);
+                $table->string('last_name',255);
+                $table->string('email');
+                $table->string('phone',100);
+                $table->integer('status_id')->unsigned();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

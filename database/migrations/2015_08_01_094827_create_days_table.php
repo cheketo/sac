@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMovementsTypeTable extends Migration
+class CreateDaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateMovementsTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('movements_type', function (Blueprint $table) {
+        Schema::create('days', function (Blueprint $table) {
             $table->increments('id');
             $table->string('es_name',100);
             $table->string('en_name',100);
@@ -33,6 +33,6 @@ class CreateMovementsTypeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('movements_type');
+        Schema::drop('days');
     }
 }

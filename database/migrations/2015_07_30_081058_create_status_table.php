@@ -14,7 +14,14 @@ class CreateStatusTable extends Migration
     {
         Schema::create('status', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',255)->unique();
+            $table->string('es_name',100);
+            $table->string('en_name',100);
+            $table->string('fr_name',100);
+            $table->string('it_name',100);
+            $table->string('ge_name',100);
+            $table->string('jp_name',100);
+            $table->string('pt_name',100);
+            $table->string('ru_name',100);
             $table->timestamps();
         });
     }
