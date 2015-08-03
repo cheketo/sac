@@ -1,4 +1,4 @@
-@extends('admin.principal')
+@extends('layouts.admin')
 
 @section('title')
     Login
