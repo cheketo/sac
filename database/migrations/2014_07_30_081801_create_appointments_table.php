@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWorkdaysTable extends Migration
+class CreateAppointmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,20 +12,24 @@ class CreateWorkdaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('workdays', function (Blueprint $table) {
+        Schema::create('appointments', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('patient_id')->unsigned();
             $table->integer('office_id')->unsigned();
-            $table->integer('day_id')->unsigned();
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            $table->dateTime('appiontment_date');
+            $table->decimal('amount',10,2);
+            $table->integer('status_id')->unsigned();
             $table->timestamps();
 
+            $table->foreign('patient_id')->references('id')->on('patients')
+                    ->onUpdate('CASCADE')
+                    ->onDelete('NO ACTION');
 
             $table->foreign('office_id')->references('id')->on('offices')
                     ->onUpdate('CASCADE')
                     ->onDelete('NO ACTION');
 
-            $table->foreign('day_id')->references('id')->on('days')
+            $table->foreign('status_id')->references('id')->on('status')
                     ->onUpdate('CASCADE')
                     ->onDelete('NO ACTION');
         });
@@ -38,6 +42,6 @@ class CreateWorkdaysTable extends Migration
      */
     public function down()
     {
-        Schema::drop('workdays');
+        Schema::drop('appointments');
     }
 }
