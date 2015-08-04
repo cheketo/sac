@@ -12,8 +12,7 @@ class CreatePatientsTable extends Migration
      */
     public function up()
     {
-        if(Schema::hasTable('patients')){
-            if(Schema::hasTable('users')){
+        if(Schema::hasTable('status') && Schema::hasTable('users') && Schema::hasTable('patients')){
                 Schema::table('patients', function (Blueprint $table) {
 
                     $table->increments('id')->change();
@@ -33,7 +32,6 @@ class CreatePatientsTable extends Migration
                             ->onUpdate('CASCADE')
                             ->onDelete('NO ACTION');
                 });
-            }
         }else{
             Schema::create('patients', function (Blueprint $table) {
                 $table->increments('id');
