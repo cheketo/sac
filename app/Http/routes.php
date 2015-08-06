@@ -31,6 +31,8 @@ Route::get('profile', ['middleware' => 'auth', function() {
     // Only authenticated users may enter...
 }]);
 
+Route::get('status', 'StatusController@index');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

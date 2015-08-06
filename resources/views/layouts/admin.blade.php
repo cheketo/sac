@@ -43,6 +43,7 @@
 					@if (!Auth::guest())
 						<li><a href="{!! url('/admin') !!}">Inicio</a></li>
 						<li><a href="{!! url('/users') !!}">Usuarios</a></li>
+						<li><a href="{!! url('/status') !!}">Estados</a></li>
 					@endif
 				</ul>
 
