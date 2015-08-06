@@ -40,6 +40,6 @@
 		</tbody>
 	</table>
 
-	{!! $status->render() !!}
+	
 
 @endsection
