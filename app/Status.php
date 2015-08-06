@@ -26,4 +26,9 @@ class Status extends Model
      * @var array
      */
     //protected $hidden = ['password', 'remember_token'];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }    
 }

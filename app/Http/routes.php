@@ -33,6 +33,8 @@ Route::get('profile', ['middleware' => 'auth', function() {
 
 Route::get('status', 'StatusController@index');
 
+Route::get('status/create', 'StatusController@create');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

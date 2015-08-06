@@ -29,7 +29,7 @@ class StatusController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.status.create');
     }
 
     /**
@@ -40,7 +40,8 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $status = Status::create($request->all());
+        return redirect('status');
     }
 
     /**
