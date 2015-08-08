@@ -40,6 +40,8 @@
 		</tbody>
 	</table>
 
-	
+	<div class="form-group col-xs-12">
+		<a href="{!! url('/status/create') !!}">Crear un nuevo estado</a>
+	</div>
 
 @endsection

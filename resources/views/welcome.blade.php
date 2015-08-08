@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Bienvenido!</div>
+                <a href="{!! url('/login') !!}"><h3>Ingresar</h3></a>
             </div>
         </div>
     </body>

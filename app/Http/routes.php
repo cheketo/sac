@@ -15,25 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin',['middleware' => 'auth', function() {
-	return view('admin.index');
-}]);
-
 Route::get('login',function(){
-	return view('auth.login');
+	return redirect('auth/login');
 });
 
-Route::get('users',['middleware' => 'auth', function() {
-	return view('admin.users');
-}]);
-
+/*
 Route::get('profile', ['middleware' => 'auth', function() {
     // Only authenticated users may enter...
 }]);
 
-Route::get('status', 'StatusController@index');
-
-Route::get('status/create', 'StatusController@create');
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);	
+*/
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -43,3 +38,21 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+
+Route::group(['middleware'=>'auth'], function(){
+
+	// Admin Index
+	Route::get('admin',function() {
+		return view('admin.index');
+	});
+
+	// Users
+	Route::get('users',function() {
+		return view('admin.users');
+	});
+
+	// Status routes
+	Route::resource('status', 'StatusController');
+
+});

@@ -13,28 +13,28 @@
 		<div class="col-sm-6">
 
 			<div class="form-group">
-				{!! Form::text('es_name',null,['class'=>'form-control floating-label','placeholder'=>'Español:']) !!}
+				{!! Form::text('es_name',null,['class'=>'form-control floating-label','placeholder'=>'Español']) !!}
 				@if($errors->has('es_name'))
 					<p class="text-danger">{{ $errors->first('es_name') }}</p>
 				@endif
 			</div>
 
 			<div class="form-group">
-				{!! Form::text('en_name',null,['class'=>'form-control floating-label','placeholder'=>'Inglés:']) !!}
+				{!! Form::text('en_name',null,['class'=>'form-control floating-label','placeholder'=>'Inglés']) !!}
 				@if($errors->has('en_name'))
 					<p class="text-danger">{{ $errors->first('en_name') }}</p>
 				@endif
 			</div>
 			
 			<div class="form-group">
-				{!! Form::text('fr_name',null,['class'=>'form-control floating-label','placeholder'=>'Francés:']) !!}
+				{!! Form::text('fr_name',null,['class'=>'form-control floating-label','placeholder'=>'Francés']) !!}
 				@if($errors->has('fr_name'))
 					<p class="text-danger">{{ $errors->first('fr_name') }}</p>
 				@endif
 			</div>
 
 			<div class="form-group">
-				{!! Form::text('pt_name',null,['class'=>'form-control floating-label','placeholder'=>'Portugués:']) !!}
+				{!! Form::text('pt_name',null,['class'=>'form-control floating-label','placeholder'=>'Portugués']) !!}
 				@if($errors->has('pt_name'))
 					<p class="text-danger">{{ $errors->first('pt_name') }}</p>
 				@endif
@@ -45,28 +45,28 @@
 		<div class="col-sm-6">
 
 			<div class="form-group">
-				{!! Form::text('it_name',null,['class'=>'form-control floating-label','placeholder'=>'Italiano:']) !!}
+				{!! Form::text('it_name',null,['class'=>'form-control floating-label','placeholder'=>'Italiano']) !!}
 				@if($errors->has('it_name'))
 					<p class="text-danger">{{ $errors->first('it_name') }}</p>
 				@endif
 			</div>
 
 			<div class="form-group">
-				{!! Form::text('ge_name',null,['class'=>'form-control floating-label','placeholder'=>'Alemán:']) !!}
+				{!! Form::text('ge_name',null,['class'=>'form-control floating-label','placeholder'=>'Alemán']) !!}
 				@if($errors->has('ge_name'))
 					<p class="text-danger">{{ $errors->first('ge_name') }}</p>
 				@endif
 			</div>
 
 			<div class="form-group">
-				{!! Form::text('ru_name',null,['class'=>'form-control floating-label','placeholder'=>'Ruso:']) !!}
+				{!! Form::text('ru_name',null,['class'=>'form-control floating-label','placeholder'=>'Ruso']) !!}
 				@if($errors->has('ru_name'))
 					<p class="text-danger">{{ $errors->first('ru_name') }}</p>
 				@endif
 			</div>
 
 			<div class="form-group">
-				{!! Form::text('jp_name',null,['class'=>'form-control floating-label','placeholder'=>'Japonés:']) !!}
+				{!! Form::text('jp_name',null,['class'=>'form-control floating-label','placeholder'=>'Japonés']) !!}
 				@if($errors->has('jp_name'))
 					<p class="text-danger">{{ $errors->first('jp_name') }}</p>
 				@endif
